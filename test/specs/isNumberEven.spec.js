@@ -15,7 +15,4 @@ describe('isNumberEven positive scenarios', function() {
   it('should return false if number is odd', function() {
     expect(validator.isNumberEven(5)).to.be.equal(false);
   });
-  it('chai test', function() {
-    expect([1, 2]).to.be.eql([1, 2]);
-  });
 });
