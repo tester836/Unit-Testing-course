@@ -4,7 +4,8 @@
   "description": "Unit testing course with Mocha framework",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "nyc npm run test"
   },
   "keywords": [
     "mocha",
@@ -20,7 +21,29 @@
     "eslint": "^8.13.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4",
     "mocha": "^9.2.2",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "nyc": "^15.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tester836/Unit-Testing-course.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tester836/Unit-Testing-course/issues"
+  },
+  "homepage": "https://github.com/tester836/Unit-Testing-course#readme",
+  "nyc": {
+    "reporter": "html",
+    "check-coverage": true,
+    "branches": 40,
+    "lines": 40,
+    "functions": 50
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run coverage"
+    }
   }
 }

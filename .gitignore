@@ -1,3 +1,5 @@
 .idea
+node_modules
+.nyc_output
+coverage
 mochawesome-report
-/node_modules/
