@@ -1,8 +1,11 @@
-to run tests:
+install
+>npm install
+
+run unit tests:
 >npm test
 
-to run coverage:
->npm run coverage    
+generate coverage report:
+>npm run coverage
 
 ### Practical Task
 Задания основаны на примерах в репозитории:

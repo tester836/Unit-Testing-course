@@ -1,4 +1,2 @@
-module.exports = {
-  spec: "test/**/*.spec.js",
-  reporter: "mochawesome"
-};
+export const spec = "test/**/*.spec.js";
+export const reporter = "mochawesome";
