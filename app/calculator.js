@@ -17,7 +17,7 @@ class Calculator {
    * @memberOf Calculator
    */
   addNumbers(a, b) {
-    return a + b;
+    return Number(a + b);
   };
 
   /**
@@ -27,8 +27,8 @@ class Calculator {
    * @memberOf Calculator
    */
   multiplyNumbers(a, b) {
-    return a * b;
+    return Number(a * b);
   };
 };
 
-export default Calculator;
+module.exports = Calculator;

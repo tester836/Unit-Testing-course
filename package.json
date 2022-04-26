@@ -12,7 +12,6 @@
     "unit",
     "testing"
   ],
-  "type": "module",
   "author": "tester836",
   "license": "ISC",
   "devDependencies": {
