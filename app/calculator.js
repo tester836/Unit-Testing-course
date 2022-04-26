@@ -17,7 +17,7 @@ class Calculator {
    * @memberOf Calculator
    */
   addNumbers(a, b) {
-    return Number(a + b);
+    return a + b;
   };
 
   /**
@@ -27,7 +27,7 @@ class Calculator {
    * @memberOf Calculator
    */
   multiplyNumbers(a, b) {
-    return Number(a * b);
+    return a * b;
   };
 };
 

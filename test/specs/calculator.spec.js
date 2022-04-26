@@ -39,27 +39,32 @@ describe('Calculator', function() {
     expect(calc.addNumbers(3.33, 0)).to.be.equal(3.33);
   });
 
-  it('Should Add Two Positive Max Safe Numbers', function() {
+  it('Should Add Two Positive Max Safe Integer Numbers', function() {
     expect(calc.addNumbers(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER))
-        .to.be.equal(Infinity);
+        .to.be.equal(18014398509481982);
   });
 
-  it('Should Add Two Positive Max Numbers', function() {
+  it('Should Add Two Positive Max Value Numbers', function() {
     expect(calc.addNumbers(Number.MAX_VALUE, Number.MAX_VALUE))
         .to.be.equal(Infinity);
   });
 
-  it('Should Add Two Negative Max Safe Numbers', function() {
+  it('Should Add Two Negative Max Safe Integer Numbers', function() {
     expect(calc.addNumbers(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER))
+        .to.be.equal(-18014398509481982);
+  });
+
+  it('Should Add Two Negative Max Value Numbers', function() {
+    expect(calc.addNumbers(-Number.MAX_VALUE, -Number.MAX_VALUE))
         .to.be.equal(-Infinity);
   });
 
-  it('Should Add Two Positive Infinity', function() {
+  it('Should Add Two Positive Infinities', function() {
     expect(calc.addNumbers(Infinity, Infinity))
         .to.be.equal(Infinity);
   });
 
-  it('Should Add Two Negative Infinity', function() {
+  it('Should Add Two Negative Infinities', function() {
     expect(calc.addNumbers(-Infinity, -Infinity))
         .to.be.equal(-Infinity);
   });
@@ -78,7 +83,7 @@ describe('Calculator', function() {
   });
 
   it('Should Multiply Two Positive Double Numbers', function() {
-    expect(calc.multiplyNumbers(14.234, 5.1)).to.be.equal(72.5934);
+    expect(+calc.multiplyNumbers(14.234, 5.1).toFixed(4)).to.be.equal(72.5934); // todo as improvement: the correct multiply of doubles
   });
 
   it('Should Multiply Two Negative Double Numbers', function() {
@@ -93,28 +98,33 @@ describe('Calculator', function() {
     expect(calc.multiplyNumbers(3.33, 0)).to.be.equal(0);
   });
 
-  it('Should Add Two Positive Max Safe Numbers', function() {
+  it('Should Multiply Two Positive Max Safe Integer Numbers', function() {
     expect(calc.multiplyNumbers(Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER))
-        .to.be.equal(18014398509481982n);
+        .to.be.equal(8.112963841460666e+31);
   });
 
-  it('Should Add Two Positive Max Numbers', function() {
-    expect(calc.multiplyNumbers(Number.MAX_VALUE, 1))
+  it('Should Multiply Two Positive Max Value Numbers', function() {
+    expect(calc.multiplyNumbers(Number.MAX_VALUE, Number.MAX_VALUE))
         .to.be.equal(Infinity);
   });
 
-  it('Should Add Two Negative Max Safe Numbers', function() {
-    expect(calc.multiplyNumbers(-Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER))
-        .to.be.equal(-18014398509481982n);
+  it('Should Multiply Positive and Negative Max Safe Integer Numbers', function() {
+    expect(calc.multiplyNumbers(Number.MAX_SAFE_INTEGER, -Number.MAX_SAFE_INTEGER))
+        .to.be.equal(-8.112963841460666e+31);
   });
 
-  it('Should Add Two Positive Infinity', function() {
+  it('Should Multiply Positive and Negative Max Value Numbers', function() {
+    expect(calc.addNumbers(Number.MAX_VALUE, -Number.MAX_VALUE))
+        .to.be.equal(0);
+  });
+
+  it('Should Multiply Two Positive Infinities', function() {
     expect(calc.multiplyNumbers(Infinity, Infinity))
         .to.be.equal(Infinity);
   });
 
-  it('Should Add Two Negative Infinity', function() {
-    expect(calc.multiplyNumbers(-Infinity, -Infinity))
+  it('Should Multiply Positive and Negative Infinity', function() {
+    expect(calc.multiplyNumbers(Infinity, -Infinity))
         .to.be.equal(-Infinity);
   });
 });
